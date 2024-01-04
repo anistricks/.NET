@@ -3,7 +3,8 @@
 
 application wpf
 
-    Clic droit sur le projet -> Gérer les packages NuGet 
+Clic droit sur le projet -> Gérer les packages NuGet 
+
 Ajouter les packages:
 Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.Design
@@ -13,7 +14,7 @@ Microsoft.EntityFrameworkCore.Proxies
 
 
 
-    	Outils – Gestionnaire de Package NuGet -> Console
+Outils – Gestionnaire de Package NuGet -> Console
 
  Scaffold-DbContext -OutputDir Models 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind' Microsoft.EntityFrameworkCore.SqlServer
 
