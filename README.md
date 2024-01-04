@@ -39,3 +39,11 @@ exemple :
      </StackPanel>
  </DataTemplate>
 </Window.Resources>
+
+
+
+           <DataGrid.Columns>
+                <!--<DataGridTextColumn Binding="{Binding LastName}" Header="Name" Width="*" />-->
+                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
+                <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
+            </DataGrid.Columns>
