@@ -32,7 +32,9 @@ dans protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde
 
  
   : INotifyPropertyChanged
+  
   public event PropertyChangedEventHandler PropertyChanged; // La view s'enregistera automatiquement sur cet event
+
  protected virtual void OnPropertyChanged(string propertyName)
  {
      if (PropertyChanged != null)
