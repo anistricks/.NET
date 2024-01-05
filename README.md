@@ -58,7 +58,66 @@ exemple :
 a sa faut add  !!! 
  <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ListProducts}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
 -------------------------------------------------------------------------------------------------------------------------------------
+       <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*" MinHeight="100"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="35" MinHeight="35"/>
+        </Grid.RowDefinitions>
 
+
+        <DataGrid Name="dgCustomers" Margin="6" Grid.Row="1" AutoGenerateColumns="False" SelectedItem="{Binding        SelectedEmployee}" ItemsSource="{Binding EmployeesList}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn Binding="{Binding LastName}" Header="Name" Width="*" />-->
+                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
+                <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Label Grid.Row="2" Margin="6,6,87,6" FontSize="12" FontWeight="Bold" >MVVM</Label>
+        <Button Command="{Binding AddCommand}" Content="Add" Width="75" Margin="6,6,87,6" Grid.Row="2" HorizontalAlignment="Right"/>
+        <Button Content="Remove" Width="75" Margin="6" Grid.Row="2" HorizontalAlignment="Right" />
+        <Grid Grid.Row="3" Margin="6" DataContext="{Binding SelectedItem, ElementName=dgCustomers}" >
+            <!-- IsEnabled="{Binding SelectedItem, ElementName=dgCustomers, Converter={StaticResource NullToBoolConverter}, ConverterParameter=true}" -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Label Content="Last Name :" Margin="6" />
+                <Label Content="First Name :" Margin="6" />
+                <Label Content="Title :" Margin="6" />
+                <Label Content="Birth Date :" Margin="6" />
+                <Label Content="Hire Date :" Margin="6" />
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Height="27" Margin="6,6,6,5" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Height="27" Margin="6,6,6,5" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                <ComboBox Name="cbTitle" Height="27" Margin="6,6,6,5" 
+                          ItemsSource="{Binding DataContext.ListTitle, 
+                    RelativeSource={RelativeSource FindAncestor,
+                    AncestorType={x:Type Window}}}"                          
+                          SelectedItem="{Binding TitleOfCourtesy}" />
+                <DatePicker Height="27" Margin="6,6,6,5" SelectedDate="{Binding BirthDate}" />
+                <DatePicker Height="27" Margin="6,6,6,5" SelectedDate="{Binding HireDate}" />
+            </StackPanel>
+            <DataGrid Grid.Column="2" AutoGenerateColumns="False"
+                      ItemsSource="{Binding DataContext.OrdersList,
+                RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type Window}}}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding OrderID}" Header="OrderID" Width="*" />
+                    <DataGridTextColumn Binding="{Binding OrderDate}" Header="OrderDate" Width="*" />
+                    <DataGridTextColumn Binding="{Binding OrderTotal}" Header="OrderTotal" Width="*" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+-------------------------------------------------------------------------------------------------------------------------------------
 !!! exemple data grid !!!
 
         <DataGrid Name="dgEmployee"  AutoGenerateColumns="False"  ItemsSource="{Binding EmployeeList}"  SelectedItem="{Binding SelectedEmployee}"   Margin="0,0,0,182" IsReadOnly="True" >
