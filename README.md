@@ -47,3 +47,9 @@ exemple :
                 <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
                 <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
             </DataGrid.Columns>
+
+
+  public string DisplayBirthDate
+  {
+      get { return _employee.BirthDate.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); }
+  }
