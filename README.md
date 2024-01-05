@@ -43,6 +43,7 @@ dans protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde
      }
  }
 
+!!!! OnPropertyChanged("FullName"); !!!!
 
 exemple : 
  <Window.Resources>
