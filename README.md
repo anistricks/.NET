@@ -61,11 +61,12 @@ a sa faut add  !!!
 
 
 
-           <DataGrid.Columns>
-                <!--<DataGridTextColumn Binding="{Binding LastName}" Header="Name" Width="*" />-->
-                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
-                <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
-            </DataGrid.Columns>
+          <DataGrid  ItemsSource="{Binding EmployeeList}" IsReadOnly="True" AutoGenerateColumns="False" SelectedItem="{Binding SelectedEmployee}"  Margin="0,0,-9,182">
+    <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
+        <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
+    </DataGrid.Columns>
+</DataGrid>
 
 
   public string DisplayBirthDate
