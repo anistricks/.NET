@@ -61,7 +61,7 @@ a sa faut add  !!!
 
 !!! exemple data grid !!!
 
-          <DataGrid  ItemsSource="{Binding EmployeeList}" IsReadOnly="True" AutoGenerateColumns="False" SelectedItem="{Binding SelectedEmployee}"  Margin="0,0,-9,182">
+<DataGrid Name="dgEmployee"  AutoGenerateColumns="False"  ItemsSource="{Binding EmployeeList}"  SelectedItem="{Binding SelectedEmployee}"   Margin="0,0,-9,182" IsReadOnly="True" >
     <DataGrid.Columns>
         <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
         <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
