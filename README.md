@@ -61,12 +61,12 @@ a sa faut add  !!!
 
 !!! exemple data grid !!!
 
-<DataGrid Name="dgEmployee"  AutoGenerateColumns="False"  ItemsSource="{Binding EmployeeList}"  SelectedItem="{Binding SelectedEmployee}"   Margin="0,0,-9,182" IsReadOnly="True" >
-    <DataGrid.Columns>
-        <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
-        <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
-    </DataGrid.Columns>
-</DataGrid>
+        <DataGrid Name="dgEmployee"  AutoGenerateColumns="False"  ItemsSource="{Binding EmployeeList}"  SelectedItem="{Binding SelectedEmployee}"   Margin="0,0,0,182" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="*" />
+                <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
 -------------------------------------------------------------------------------------------------------------------------------------
 
   public string DisplayBirthDate
