@@ -12,7 +12,7 @@ Microsoft.EntityFrameworkCore.Tools
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Proxies
 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 
 Outils – Gestionnaire de Package NuGet -> Console
 
@@ -29,7 +29,7 @@ dans protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde
 
 
  this.DataContext = new ProductVM(); //exemple
-
+--------------------------------------------------------------------------------------------------------------------------------------
  
   : INotifyPropertyChanged
   
@@ -44,7 +44,7 @@ dans protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde
  }
 
 !!!! OnPropertyChanged("FullName"); !!!!
-
+------------------------------------------------------------------------------------------------------------------------------------
 exemple : 
  <Window.Resources>
  <DataTemplate x:Key="listTemplate">
@@ -57,9 +57,9 @@ exemple :
 
 a sa faut add  !!! 
  <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ListProducts}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
+-------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+!!! exemple data grid !!!
 
           <DataGrid  ItemsSource="{Binding EmployeeList}" IsReadOnly="True" AutoGenerateColumns="False" SelectedItem="{Binding SelectedEmployee}"  Margin="0,0,-9,182">
     <DataGrid.Columns>
@@ -67,7 +67,7 @@ a sa faut add  !!!
         <DataGridTextColumn Binding="{Binding DisplayBirthDate}" Header="Birth Date" Width="*" />
     </DataGrid.Columns>
 </DataGrid>
-
+-------------------------------------------------------------------------------------------------------------------------------------
 
   public string DisplayBirthDate
   {
