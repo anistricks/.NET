@@ -47,6 +47,8 @@ dans protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilde
 ------------------------------------------------------------------------------------------------------------------------------------
 exemple : 
  <Window.Resources>
+ </Window.Resources>
+ <Window.Resources>
  <DataTemplate x:Key="listTemplate">
      <StackPanel Margin="0 5 0 5">
          <Label Content="{Binding ProductId}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
