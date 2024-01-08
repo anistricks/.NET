@@ -56,7 +56,8 @@ exemple :
      </StackPanel>
  </DataTemplate>
 </Window.Resources>
-
+!!!!!!!!!!!!!!!!     this.DataContext = new ProductVM(); !!!!!!!!!!!!!!!!!!!!!
+-------------------------------------------------------------------------------
 a sa faut add  !!! 
  <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ListProducts}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
 -------------------------------------------------------------------------------------------------------------------------------------
