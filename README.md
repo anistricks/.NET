@@ -15,7 +15,7 @@ Microsoft.EntityFrameworkCore.Proxies
 -------------------------------------------------------------------------------------------------------------------------------------
 ![image](https://github.com/anistricks/.NET/assets/71337903/04856b48-7a7d-4468-91af-63dd3f40b969)
 
-
+ StartupUri="Views/MainWindow.xaml">
 Outils – Gestionnaire de Package NuGet -> Console
 
  Scaffold-DbContext -OutputDir Models 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind' Microsoft.EntityFrameworkCore.SqlServer
