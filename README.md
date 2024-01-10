@@ -63,7 +63,7 @@ exemple :
 !!!!!!!!!!!!!!!!     this.DataContext = new ProductVM(); !!!!!!!!!!!!!!!!!!!!!
 -------------------------------------------------------------------------------
 a sa faut add  !!! 
- <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ListProducts}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
+ <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ProductsList}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
 -------------------------------------------------------------------------------------------------------------------------------------
        <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
