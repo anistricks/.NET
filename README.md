@@ -169,3 +169,8 @@ a sa faut add  !!!
   {
       get { return _employee.BirthDate.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); }
   }
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+https://api.nuget.org/v3/index.json
+nuget.org
