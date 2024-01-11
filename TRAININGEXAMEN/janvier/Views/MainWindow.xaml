@@ -1,0 +1,59 @@
+﻿<Window x:Class="janvier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:janvier"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <StackPanel Margin="0 5 0 5">
+                <Label Content="{Binding ProductID}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="{Binding ProductName}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+
+
+        </Grid.RowDefinitions>
+        <Label Content="Nombre De Produits par Pays ayant été vendu au moins une fois " Margin="6,0,80,0"  HorizontalAlignment="Right" />
+        <ComboBox Grid.Row="1" x:Name="comboboxList"  ItemsSource="{Binding ProductsList}" SelectedItem="{Binding SelectedProduct}" Margin="42,0,0,0" Width="200" HorizontalAlignment="Left"  ItemTemplate="{StaticResource listTemplate}"  />
+        <Grid Grid.Row="2"  DataContext="{Binding SelectedItem, ElementName=comboboxList}"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="400"/>
+
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Label Content="ProductID :" Margin="6" />
+                <Label Content="ProductName :" Margin="6" />
+                <Label Content="Catégorie :" Margin="6" />
+                <Label Content="Fournisseur :" Margin="6" />
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="Wrap" Text="{Binding ProductID}" Width="180" Margin="11" />
+                <TextBlock TextWrapping="Wrap" Text="{Binding ProductName}" Width="180" Margin="11" />
+                <TextBlock TextWrapping="Wrap" Text="{Binding Category}" Width="180" Margin="11" />
+                <TextBlock TextWrapping="Wrap" Text="{Binding Fournisseur}" Width="180" Margin="11" />
+
+
+            </StackPanel>
+        </Grid>
+        <Button Command="{Binding RemoveCommand}" Content="Abandonner le Produit sélectionné" Width="200"  HorizontalAlignment="Left" Margin="42,255,0,-43" Grid.Row="1" />
+        <DataGrid  Width="400" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right"  Margin="0,-100,10,0"  Name="dgCustomers"  AutoGenerateColumns="False"  ItemsSource="{Binding AffichageList}" IsReadOnly="True" >
+            <DataGrid.Columns>
+        
+                <DataGridTextColumn Binding="{Binding Country}" Header="Country" Width="*" />
+                <DataGridTextColumn Binding="{Binding Count}" Header="Nb" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
