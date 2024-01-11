@@ -65,13 +65,14 @@ exemple :
 a sa faut add  !!! 
  <ListBox x:Name="listBoxProduct" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding ProductsList}" ItemTemplate="{StaticResource listboxTemplate}"  Margin="10,24,580,276" />
 -------------------------------------------------------------------------------------------------------------------------------------
-       <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="*" MinHeight="100"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="35" MinHeight="35"/>
-        </Grid.RowDefinitions>
+     <Grid.RowDefinitions>
+      <RowDefinition Height="35"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="35"/>
+      <RowDefinition Height="200"/>
+      <RowDefinition Height="35" />
+      <RowDefinition Height="*" />
+   </Grid.RowDefinitions>
 
 
         <DataGrid Name="dgCustomers" Margin="6" Grid.Row="1" AutoGenerateColumns="False" SelectedItem="{Binding        SelectedEmployee}" ItemsSource="{Binding EmployeesList}" IsReadOnly="True">
@@ -86,6 +87,39 @@ a sa faut add  !!!
         <Label Grid.Row="2" Margin="6,6,87,6" FontSize="12" FontWeight="Bold" >MVVM</Label>
         <Button Command="{Binding AddCommand}" Content="Add" Width="75" Margin="6,6,87,6" Grid.Row="2" HorizontalAlignment="Right"/>
         <Button Content="Remove" Width="75" Margin="6" Grid.Row="2" HorizontalAlignment="Right" />
+        -----------------------------------------------------------------------------------------------------------------------------------------------
+
+ <Grid Grid.Row="3" Margin="6" DataContext="{Binding SelectedItem, ElementName=comboboxProduct}" >
+     <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="35"/>
+         <ColumnDefinition Width="100"/>
+         <ColumnDefinition Width="150"/>
+         <ColumnDefinition Width="*"/>
+     </Grid.ColumnDefinitions>
+     <StackPanel Grid.Column="1">
+         <Label Content="ProductId" Margin="6" />
+         <Label Content="ProductName" Margin="6" />
+         <Label Content="Catégorie" Margin="6" />
+         <Label Content="Fournisseur" Margin="6" />
+
+     </StackPanel>
+
+     <StackPanel Grid.Column="2">
+         <TextBlock   Height="27" Margin="6,6,6,5" Text="{Binding ProductId}"/>
+         <TextBlock   Height="27" Margin="6,6,6,5" Text="{Binding ProductName}"/>
+         <TextBlock   Height="27" Margin="6,6,6,5" Text="{Binding Category}"/>
+         <TextBlock   Height="27" Margin="6,6,6,5" Text="{Binding Fournisseur}"/>
+
+     </StackPanel>
+
+
+
+ </Grid>
+
+
+
+
+        -----------------------------------------------------------------------------------------------------------------------------------------------
         <Grid Grid.Row="3" Margin="6" DataContext="{Binding SelectedItem, ElementName=dgCustomers}" >
             <!-- IsEnabled="{Binding SelectedItem, ElementName=dgCustomers, Converter={StaticResource NullToBoolConverter}, ConverterParameter=true}" -->
             <Grid.ColumnDefinitions>
